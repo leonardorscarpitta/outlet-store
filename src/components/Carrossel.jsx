@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const images = [
-    { id: 1, src: './public/banner.avif', alt: 'Image 1' },
-    { id: 2, src: './public/banner.webp', alt: 'Image 2' },
-    { id: 3, src: './public/banner3.png', alt: 'Image 3' },
+    { id: 1, src: './public/carrossel1.jpg', alt: 'Image 1' },
+    { id: 2, src: './public/carrossel2.jpg', alt: 'Image 2' },
+    { id: 3, src: './public/carrossel3.jpg', alt: 'Image 3' },
 ];
 
 const Carrossel = () => {
@@ -24,13 +24,10 @@ const Carrossel = () => {
 
     return (
         <section className="relative w-full h-64 overflow-hidden">
-            <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
+            <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                 {images.map((image) => (
-                    <div key={image.id} className="min-w-full h-full flex items-center justify-center">
-                        <img src={image.src} alt={image.alt} className="w-1/2 h-56" />
+                    <div key={image.id} className="min-w-full h-64 md:h-80 lg:h-96 flex items-center justify-center bg-gray-100">
+                        <img src={image.src} alt={image.alt} className="max-w-full max-h-full object-contain" />
                     </div>
                 ))}
             </div>
