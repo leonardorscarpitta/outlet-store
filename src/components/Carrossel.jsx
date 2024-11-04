@@ -6,7 +6,7 @@ const images = [
     { id: 3, src: './public/carrossel3.jpg', alt: 'Image 3' },
 ];
 
-const Carrossel = () => {
+export default function Carrossel() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const nextSlide = () => {
@@ -23,7 +23,7 @@ const Carrossel = () => {
     }, []);
 
     return (
-        <section className="relative w-full h-64 overflow-hidden">
+        <section className="relative h-64 overflow-hidden">
             <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                 {images.map((image) => (
                     <div key={image.id} className="min-w-full h-64 md:h-80 lg:h-96 flex items-center justify-center bg-gray-100">
@@ -31,20 +31,8 @@ const Carrossel = () => {
                     </div>
                 ))}
             </div>
-            <button
-                className="font-extrabold absolute left-1/4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow hover:bg-gray-200 transition"
-                onClick={prevSlide}
-            >
-                &lt;
-            </button>
-            <button
-                className="font-extrabold absolute right-1/4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow hover:bg-gray-200 transition"
-                onClick={nextSlide}
-            >
-                &gt;
-            </button>
+            <button className="font-extrabold absolute left-1/4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow hover:bg-gray-200 transition" onClick={prevSlide}>&lt;</button>
+            <button className="font-extrabold absolute right-1/4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow hover:bg-gray-200 transition" onClick={nextSlide} >&gt;</button>
         </section>
     );
 };
-
-export default Carrossel;

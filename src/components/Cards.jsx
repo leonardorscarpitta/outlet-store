@@ -4,14 +4,16 @@ const roupas = [
     { "nome": "Roupa 3", "precoAntigo": 60.99, "preco": 57.90, "estoque": 10, "imagem": "./public/roupa1.png" },
     { "nome": "Roupa 4", "precoAntigo": 40.99, "preco": 28.90, "estoque": 3, "imagem": "./public/roupa1.png" },
     { "nome": "Roupa 5", "precoAntigo": 55.99, "preco": 50.90, "estoque": 8, "imagem": "./public/roupa1.png" },
+    { "nome": "Roupa 3", "precoAntigo": 60.99, "preco": 57.90, "estoque": 10, "imagem": "./public/roupa1.png" },
+    { "nome": "Roupa 4", "precoAntigo": 40.99, "preco": 28.90, "estoque": 3, "imagem": "./public/roupa1.png" },
     { "nome": "Roupa 6", "precoAntigo": 30.99, "preco": 25.90, "estoque": 12, "imagem": "./public/roupa1.png" }
 ]
 
 export default function Cards() {
     return (
         <main className="flex flex-col gap-y-8">
-            <h2 className="text-2xl font-bold">Itens em Estoque</h2>
-            <section className="grid grid-cols-3 gap-8">
+            <h2 className="text-2xl font-bold text-center">Itens em Estoque</h2>
+            <section className="grid grid-cols-4 gap-8">
                 {roupas.map((roupa, index) => (
                     <div key={index} className="shadow-lg p-4 flex flex-col gap-y-3 bg-slate-100 rounded justify-center items-center">
                         <h3 className="font-medium">{roupa.nome}</h3>
