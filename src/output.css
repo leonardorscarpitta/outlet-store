@@ -882,3 +882,7 @@ video {
   padding-left: 1rem /* 16px */;
   padding-right: 1rem /* 16px */;
 }
+
+.min-h-40 {
+  min-height: 10rem /* 160px */;
+}
