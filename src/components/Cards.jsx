@@ -1,12 +1,9 @@
 const roupas = [
-    { "nome": "Roupa 1", "precoAntigo": 50.99, "preco": 42.90, "estoque": 7, "imagem": "./public/roupa1.png" },
-    { "nome": "Roupa 2", "precoAntigo": 45.99, "preco": 33.90, "estoque": 5, "imagem": "./public/roupa1.png" },
-    { "nome": "Roupa 3", "precoAntigo": 60.99, "preco": 57.90, "estoque": 10, "imagem": "./public/roupa1.png" },
-    { "nome": "Roupa 4", "precoAntigo": 40.99, "preco": 28.90, "estoque": 3, "imagem": "./public/roupa1.png" },
-    { "nome": "Roupa 5", "precoAntigo": 55.99, "preco": 50.90, "estoque": 8, "imagem": "./public/roupa1.png" },
-    { "nome": "Roupa 3", "precoAntigo": 60.99, "preco": 57.90, "estoque": 10, "imagem": "./public/roupa1.png" },
-    { "nome": "Roupa 4", "precoAntigo": 40.99, "preco": 28.90, "estoque": 3, "imagem": "./public/roupa1.png" },
-    { "nome": "Roupa 6", "precoAntigo": 30.99, "preco": 25.90, "estoque": 12, "imagem": "./public/roupa1.png" }
+    { "nome": "Kit moletom", "precoAntigo": 59.99, "preco": 47.90, "estoque": 7, "imagem": "./public/roupa1.png" },
+    { "nome": "Camiseta de Algodão - Amarela", "precoAntigo": 72.99, "preco": 61.90, "estoque": 5, "imagem": "./public/roupa2.avif" },
+    { "nome": "Camiseta de Algodão - Cinza", "precoAntigo": 88.99, "preco": 69.90, "estoque": 10, "imagem": "./public/roupa3.jpg" },
+    { "nome": "Kit moletom - Amarelo", "precoAntigo": 49.99, "preco": 39.90, "estoque": 3, "imagem": "./public/roupa4.jpg" },
+    { "nome": "Camiseta Feminina", "precoAntigo": 64.99, "preco": 52.90, "estoque": 8, "imagem": "./public/roupa5.jpg" },
 ]
 
 export default function Cards() {
@@ -17,7 +14,7 @@ export default function Cards() {
                 {roupas.map((roupa, index) => (
                     <div key={index} className="shadow-lg p-4 flex flex-col gap-y-3 bg-slate-100 rounded justify-center items-center">
                         <h3 className="font-medium">{roupa.nome}</h3>
-                        <img src={roupa.imagem} alt={roupa.nome} width={200} />
+                        <img className="min-h-40" src={roupa.imagem} alt={roupa.nome} width={200} />
                         <p className="font-bold">Estoque: {roupa.estoque}</p>
                         <s className="text-red-600 line-through text-sm">$ {roupa.precoAntigo}</s>
                         <p className="text-green-700 font-bold">$ {roupa.preco.toFixed(2)}</p>
